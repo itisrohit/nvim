@@ -23,12 +23,20 @@ Neovim install:
 ## What You Get
 
 - File explorer
+- Top file tabs
 - Better syntax highlighting
 - Fast file search
 - Code completion and LSP support
 - Keybinding popup help with which-key
 - Session restore
 - Quick jump navigation
+- Terminal toggle
+- Better notifications
+- Git diff view
+- Markdown preview with Mermaid support
+- Command palette style picker
+- Breadcrumb bar at the top of files
+- Better indent and code block guides
 - Autosave
 - Mouse support
 - Persistent undo history
@@ -62,8 +70,13 @@ nvim
 
 - Press `Space` and wait a moment to see the main shortcuts on screen
 - `Space e` opens or closes the file sidebar
+- `Space Space` opens the command palette
 - `Space f f` finds files
 - `Space f s` searches text across files
+- `Space f b` finds open files
+- `Space f o` finds recent files
+- `Space f k` finds shortcuts
+- `Space f h` finds help pages
 - `Space z` undoes the last change
 - `Space Shift-z` redoes the last undone change
 - `Space y` copies to system clipboard
@@ -74,10 +87,18 @@ nvim
 - `Space a` shows available code actions like quick fixes, rename help, or import cleanup
 - `Space g f` formats the current file
 - `Space g p` previews the current git change
+- `Space g v` opens the Git diff view
+- `Space g c` closes the Git diff view
 - `Space b` toggles git blame
 - `Space j` jumps to visible text on screen
 - `Space q s` restores the saved session for the current folder
 - `Space q l` restores the last session
+- `Space t t` toggles the terminal
+- `Space t n` opens a new terminal
+- `Space t o` picks a terminal
+- `Space x` closes the current file
+- `Space m p` toggles Markdown preview
+- `Space ;` picks from the breadcrumb path at the top
 
 ## Common Commands
 
@@ -101,12 +122,48 @@ nvim
 - `:Lazy restore` restores plugins from the lockfile
 - `:Mason` opens the LSP/tool installer
 
+## Command Palette
+
+- `Space Space` opens a searchable command palette
+- Use it when you do not remember a command or shortcut
+- This is the closest thing here to VS Code's command palette
+- Search with plain words like `terminal`, `sidebar`, `markdown`, `diff`, or `format`
+- Start typing to search, then press `Enter` to run the selected option
+
+## Tabs And Files
+
+- Open files show as tabs at the top
+- `Shift-h` moves to the previous open file tab
+- `Shift-l` moves to the next open file tab
+- `Space x` closes the current file
+
+## Breadcrumbs
+
+- A breadcrumb bar appears at the top of code files
+- It shows where you are inside the file, like classes, functions, and blocks
+- `Space ;` lets you pick from the breadcrumb path
+
+## Visual Guides
+
+- Indent guides and current code block highlighting are enabled
+- This makes nested code easier to read
+
+## Terminal
+
+- `Space t t` opens or hides the terminal
+- `Space t n` opens another terminal
+- `Space t o` shows a picker for your live terminals
+- The picker labels them as `Visible` or `Hidden`
+- If a terminal shell has exited, it disappears from the picker
+- It opens as a floating terminal so it feels cleaner than raw `:terminal`
+
 ## Discovering Shortcuts
 
 - Press `Space` and pause briefly to open the which-key popup
 - It shows the main shortcuts in plain English so you do not need to memorize them all
 - Use it like a cheat sheet: press `Space`, read the options, then press the next key
 - If you see a group like `f` or `g`, press that key next to see more related commands
+- Many popup choices and selection menus are also shown with a cleaner UI now
 
 ## Sessions
 
@@ -118,6 +175,12 @@ nvim
 
 - `Space j` shows jump labels on visible text
 - Type the shown letters to jump directly there
+
+## Git Diff View
+
+- `Space g v` opens a full Git diff view
+- `Space g c` closes it
+- Use this when you want a cleaner Git review view than a one-line hunk preview
 
 ## Neo-tree
 
@@ -167,10 +230,17 @@ Formatting and linting currently use:
 - JavaScript/TypeScript formatting with prettier
 - Python linting and formatting with Ruff
 
+## Previews
+
+- `Space m p` toggles Markdown preview in your browser
+- Markdown preview supports Mermaid out of the box
+- Image and SVG preview can also be added later if you work with screenshots or design assets often
+
 ## Dependencies
 
 - Neovim >= 0.11.0
 - Git (for plugin installation)
+- Node.js is needed for Markdown preview
 - `ripgrep` for fast text search with Telescope
 - `make` is useful for some plugins
 - A Nerd Font for icons (recommended)
