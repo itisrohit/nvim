@@ -6,6 +6,7 @@ vim.g.mapleader = " "
 
 vim.opt.swapfile = false
 vim.opt.mouse = "a"
+vim.opt.mousemoveevent = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("config") .. "/.undo"

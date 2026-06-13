@@ -136,6 +136,9 @@ nvim
 - `Shift-h` moves to the previous open file tab
 - `Shift-l` moves to the next open file tab
 - `Space x` closes the current file
+- You can left-click a tab to open it
+- You can right-click a tab to close it and stay on another open file
+- The tab close button appears when you hover over a tab
 
 ## Breadcrumbs
 
