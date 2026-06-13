@@ -10,8 +10,12 @@ return {
       vim.keymap.set('n', '<C-p>', function()
         builtin.find_files({ hidden = true })
       end, { desc = "Telescope: Find files (incl. dotfiles)" })
+      vim.keymap.set('n', '<leader>ff', function()
+        builtin.find_files({ hidden = true })
+      end, { desc = "Find files" })
 
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Telescope: Live grep" })
+      vim.keymap.set('n', '<leader>fs', builtin.live_grep, { desc = "Search in files" })
     end
   },
   {
@@ -29,4 +33,3 @@ return {
     end
   },
 }
-

@@ -9,6 +9,8 @@ return {
 
       vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
       vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
+      vim.keymap.set("n", "<leader>p", ":Gitsigns preview_hunk<CR>", {})
+      vim.keymap.set("n", "<leader>b", ":Gitsigns toggle_current_line_blame<CR>", {})
     end
   }
 }

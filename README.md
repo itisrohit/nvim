@@ -1,6 +1,6 @@
 # Neovim Configuration
 
-This is my personal Neovim configuration focused on development with a clean and functional interface.
+A simple Neovim setup for coding.
 
 ## Screenshots
 
@@ -13,110 +13,89 @@ This is my personal Neovim configuration focused on development with a clean and
 ### Live Grep for Searching
 ![Live Grep](screenshots/livegrep.png)
 
-### GitHub Copilot Integration
-![Copilot View](screenshots/copilotview.png)
-
 ### Code Display
 ![Code Display](screenshots/show.png)
 
-## Key Features
+## What You Get
 
-- File explorer with Neo-tree
-- Syntax highlighting with Treesitter
-- Fuzzy finding with Telescope
-- LSP integration for code intelligence
-- GitHub Copilot support
-- Git integration with Fugitive and Gitsigns
-- Debugging support with nvim-dap
-- Catppuccin color scheme
+- File explorer
+- Better syntax highlighting
+- Fast file search
+- Code completion and LSP support
+- Autosave
+- Mouse support
+- Persistent undo history
+- GitHub Copilot inline suggestions
+- Git helpers
+- Debugging tools
+- Catppuccin theme
 
 ## Installation
 
-1. Clone this repository to your Neovim config directory:
+1. Clone this repo:
 ```bash
-git clone https://github.com/itisrohit/nvim-config.git ~/.config/nvim
+git clone https://github.com/itisrohit/nvim.git ~/.config/nvim
 ```
 
-2. Start Neovim and the plugins will be automatically installed.
-
-## Configuration Structure
-
-```
-~/.config/nvim/
-├── init.lua              # Main entry point
-├── lua/
-│   ├── vim-options.lua   # Basic Neovim settings
-│   ├── plugins.lua       # Plugin management
-│   └── plugins/          # Individual plugin configurations
-│       ├── catppuccin.lua
-│       ├── completions.lua
-│       ├── copilotchat.lua
-│       ├── debugging.lua
-│       ├── git-stuff.lua
-│       ├── lsp-config.lua
-│       ├── lualine.lua
-│       ├── neo-tree.lua
-│       ├── none-ls.lua
-│       ├── nvim-tmux-navigation.lua
-│       ├── telescope.lua
-│       └── treesitter.lua
+2. Open Neovim:
+```bash
+nvim
 ```
 
-## Key Mappings
+3. Let the plugins install.
 
-### General
-- `Space` - Leader key
-- `<leader>h` - Clear search highlights
+## Main Shortcuts
 
-### Navigation
-- `<c-h>/<c-j>/<c-k>/<c-l>` - Navigate between splits/tmux panes
-- `<c-n>` - Toggle Neo-tree file explorer
+- `Space e` opens or closes the file sidebar
+- `Space f f` finds files
+- `Space f s` searches text across files
+- `Space z` undoes the last change
+- `Space Shift-z` redoes the last undone change
+- `Space y` copies to system clipboard
+- `Space p` pastes from system clipboard
+- `K` shows help for the thing under your cursor
+- `Space d` jumps to definition
+- `Space r` shows references
+- `Space a` shows code actions
+- `Space g f` formats the current file
+- `Space g p` previews the current git change
+- `Space b` toggles git blame
 
-### Telescope
-- `<C-p>` - Find files
-- `<leader>fg` - Live grep (search in files)
+## Neo-tree
 
-### LSP
-- `K` - Hover documentation
-- `<leader>gd` - Go to definition
-- `<leader>gr` - Find references
-- `<leader>ca` - Code actions
-- `<leader>gf` - Format document
+- Open the sidebar with `Space e`
+- `a` creates a new file
+- `A` creates a new folder
+- `r` renames
+- `d` deletes
+- `Enter` opens a file
+- `q` closes the sidebar
 
-### Git
-- `<leader>gp` - Preview git hunk
-- `<leader>gt` - Toggle git blame
+## Editing Behavior
 
-### Debugging
-- `<Leader>dt` - Toggle breakpoint
-- `<Leader>dc` - Continue execution
-- `<Leader>dx` - Terminate debugging
-- `<Leader>do` - Step over
+- Files autosave while you work
+- Mouse click and scroll are enabled
+- Undo history is saved between sessions
 
-### GitHub Copilot Chat
-- `<Leader>zc` - Chat with Copilot
-- `<Leader>ze` - Explain selected code
-- `<Leader>zr` - Review selected code
-- `<Leader>zf` - Fix code issues
-- `<Leader>zo` - Optimize code
-- `<Leader>zd` - Generate documentation
-- `<Leader>zt` - Generate tests
-- `<Leader>zm` - Generate commit message
-- `<Leader>zs` - Generate commit for selection
+## Copilot
+
+- Open a file and go into Insert mode to get suggestions
+- `Tab` accepts the suggestion
+- `Ctrl-]` dismisses the suggestion
 
 ## Language Support
 
-This configuration provides built-in support for:
+Built-in support includes:
 - TypeScript/JavaScript (ts_ls)
 - Lua (lua_ls)
 - Rust (rust_analyzer)
 - Go (gopls)
 
-Additional language servers can be installed through Mason.
+You can add more language servers later through Mason.
 
 ## Formatting and Linting
 
-Using null-ls (none-ls) for:
+Formatting and linting currently use:
 - Lua formatting with stylua
 - JavaScript/TypeScript formatting with prettier
 - Ruby linting with rubocop
@@ -129,7 +108,7 @@ Using null-ls (none-ls) for:
 - A Nerd Font for icons (recommended)
 - Tmux (optional, for tmux integration)
 
-## Customization
+## Editing The Config
 
-Edit the files in `lua/plugins/` to customize individual plugins or add new ones.
-Basic Vim options can be modified in `lua/vim-options.lua`.
+- Change plugin settings in `lua/plugins/`
+- Change basic Neovim options in `lua/vim-options.lua`
