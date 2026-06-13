@@ -37,6 +37,8 @@ Neovim install:
 - Command palette style picker
 - Breadcrumb bar at the top of files
 - Better indent and code block guides
+- Auto-closing brackets and quotes
+- Better error and warning list
 - Autosave
 - Mouse support
 - Persistent undo history
@@ -96,6 +98,9 @@ nvim
 - `Space t t` toggles the terminal
 - `Space t n` opens a new terminal
 - `Space t o` picks a terminal
+- `Space u x` shows errors and warnings in a cleaner list
+- `Space u r` shows references in a cleaner list
+- `Space u s` shows symbols for the current file
 - `Space x` closes the current file
 - `Space m p` toggles Markdown preview
 - `Space ;` picks from the breadcrumb path at the top
@@ -150,6 +155,19 @@ nvim
 
 - Indent guides and current code block highlighting are enabled
 - This makes nested code easier to read
+
+## Typing Comfort
+
+- Brackets and quotes close automatically while you type
+- This includes things like `()`, `{}`, `[]`, `""`, and `''`
+- Completion confirm also works nicely with the auto-pairing
+
+## Problems And Symbols
+
+- `Space u x` opens a cleaner list of errors and warnings
+- `Space u r` opens a cleaner list of references
+- `Space u s` opens a symbols list for the current file
+- Use this when normal diagnostics feel too cramped or hard to scan
 
 ## Terminal
 
