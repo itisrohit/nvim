@@ -27,6 +27,8 @@ Neovim install:
 - Fast file search
 - Code completion and LSP support
 - Keybinding popup help with which-key
+- Session restore
+- Quick jump navigation
 - Autosave
 - Mouse support
 - Persistent undo history
@@ -73,6 +75,9 @@ nvim
 - `Space g f` formats the current file
 - `Space g p` previews the current git change
 - `Space b` toggles git blame
+- `Space j` jumps to visible text on screen
+- `Space q s` restores the saved session for the current folder
+- `Space q l` restores the last session
 
 ## Common Commands
 
@@ -102,6 +107,17 @@ nvim
 - It shows the main shortcuts in plain English so you do not need to memorize them all
 - Use it like a cheat sheet: press `Space`, read the options, then press the next key
 - If you see a group like `f` or `g`, press that key next to see more related commands
+
+## Sessions
+
+- `Space q s` restores the saved session for the current folder
+- `Space q l` restores the last session
+- `Space q d` stops session saving for the current Neovim run
+
+## Quick Jump
+
+- `Space j` shows jump labels on visible text
+- Type the shown letters to jump directly there
 
 ## Neo-tree
 
