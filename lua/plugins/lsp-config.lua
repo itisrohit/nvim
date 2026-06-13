@@ -10,6 +10,14 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
+      ensure_installed = {
+        "ts_ls",
+        "lua_ls",
+        "rust_analyzer",
+        "gopls",
+        "basedpyright",
+        "ruff",
+      },
       auto_install = true,
     },
   },
@@ -18,26 +26,57 @@ return {
     lazy = false,
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local lspconfig = require("lspconfig")
 
-      -- TypeScript (ts_ls)
-      lspconfig.ts_ls.setup({
+      vim.lsp.config("ts_ls", {
         capabilities = capabilities,
       })
 
-      -- Lua
-      lspconfig.lua_ls.setup({
+      vim.lsp.config("lua_ls", {
         capabilities = capabilities,
       })
 
-      -- Rust
-      lspconfig.rust_analyzer.setup({
+      vim.lsp.config("rust_analyzer", {
         capabilities = capabilities,
       })
 
-      -- Go
-      lspconfig.gopls.setup({
+      vim.lsp.config("gopls", {
         capabilities = capabilities,
+      })
+
+      vim.lsp.config("basedpyright", {
+        capabilities = capabilities,
+        settings = {
+          basedpyright = {
+            analysis = {
+              typeCheckingMode = "basic",
+            },
+          },
+        },
+      })
+
+      vim.lsp.config("ruff", {
+        capabilities = capabilities,
+      })
+
+      vim.lsp.enable("ts_ls")
+      vim.lsp.enable("lua_ls")
+      vim.lsp.enable("rust_analyzer")
+      vim.lsp.enable("gopls")
+      vim.lsp.enable("basedpyright")
+      vim.lsp.enable("ruff")
+
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("python_lsp_tweaks", { clear = true }),
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          if not client then
+            return
+          end
+
+          if client.name == "ruff" then
+            client.server_capabilities.hoverProvider = false
+          end
+        end,
       })
 
       -- Keymaps
