@@ -132,7 +132,7 @@ nvim
 - `Space Space` opens a searchable command palette
 - Use it when you do not remember a command or shortcut
 - This is the closest thing here to VS Code's command palette
-- Search with plain words like `terminal`, `sidebar`, `markdown`, `diff`, or `format`
+- Search with plain words like `terminal`, `sidebar`, `problem`, `reference`, `symbol`, `markdown`, `diff`, or `format`
 - Start typing to search, then press `Enter` to run the selected option
 
 ## Tabs And Files
@@ -168,6 +168,9 @@ nvim
 - `Space u r` opens a cleaner list of references
 - `Space u s` opens a symbols list for the current file
 - Use this when normal diagnostics feel too cramped or hard to scan
+- You can also open these from the command palette by searching `problem`, `reference`, or `symbol`
+- This panel shows whatever your LSPs, linters, and tools report
+- Security findings only appear here if you add a security scanner that reports them
 
 ## Terminal
 

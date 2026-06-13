@@ -23,6 +23,12 @@ return {
       local palette_items = {
         { label = "Open File Sidebar", run = function() vim.cmd("Neotree toggle left") end },
         { label = "Toggle Terminal", run = function() vim.cmd("ToggleTerm") end },
+        { label = "Open Problems Panel", run = function() vim.cmd("Trouble diagnostics toggle") end },
+        { label = "Open Current File Problems", run = function() vim.cmd("Trouble diagnostics toggle filter.buf=0") end },
+        { label = "Open References Panel", run = function() vim.cmd("Trouble lsp_references toggle") end },
+        { label = "Open Symbols Panel", run = function() vim.cmd("Trouble symbols toggle focus=false") end },
+        { label = "Open Quickfix Panel", run = function() vim.cmd("Trouble qflist toggle") end },
+        { label = "Open Location List Panel", run = function() vim.cmd("Trouble loclist toggle") end },
         { label = "Find Files", run = function() builtin.find_files({ hidden = true }) end },
         { label = "Search Text In Files", run = builtin.live_grep },
         { label = "Find Open Files", run = builtin.buffers },
