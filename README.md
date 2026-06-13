@@ -64,6 +64,7 @@ nvim
 ## Neo-tree
 
 - Open the sidebar with `Space e`
+- The sidebar refreshes automatically when files change
 - `a` creates a new file
 - `A` creates a new folder
 - `r` renames

@@ -8,8 +8,9 @@ return {
   },
   config = function()
     require("neo-tree").setup({
+      use_libuv_file_watcher = true,
+      enable_refresh_on_write = true,
       filesystem = {
-        use_libuv_file_watcher = true,
         filtered_items = {
           visible = true,        -- Show hidden files by default
           hide_dotfiles = false, -- Explicitly show dotfiles (like .env)
